@@ -56,7 +56,7 @@ src/index.js: Entry point rendering the React app.
 
 /bags → BagsScreen: Displays all bag products.
 
-/product/:id → ProductDetailScreen (planned): Will show product-specific details, images, and reviews.
+
 
 
 ✅ Key Features
