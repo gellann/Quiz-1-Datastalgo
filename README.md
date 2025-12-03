@@ -79,12 +79,12 @@ To run the project locally:
 
 Clone the repository:
 
-git clone <repository-url>
+git clone https://github.com/gellann/Quiz-1-Datastalgo.git
 
 
 Navigate to the project folder:
 
-cd <project-folder-name>
+cd Quiz-1-Datastalgo
 
 
 Install dependencies:
