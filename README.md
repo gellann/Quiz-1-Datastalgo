@@ -155,4 +155,8 @@ Test API URLs:
 
 All products: http://127.0.0.1:8000/products/
 
+<<<<<<< HEAD
 Single product: http://127.0.0.1:8000/products/1/
+=======
+Single product: http://127.0.0.1:8000/products/1/
+>>>>>>> f14b0ab (Add Quiz 2 backend and update frontend)
