@@ -1,101 +1,158 @@
-README: LOVETOHAVEIT E-Commerce Web App
+LOVETOHAVEIT E-Commerce Web App
 
 🛍️ Project Overview
-This project is the creation of the first official e-commerce website for Lovetohaveit, a small Filipino business offering stylish and affordable clothing and bags. Built with React, this website provides a modern, intuitive, and mobile-friendly platform where customers can browse products, learn about the brand, and engage with its online presence.
+Lovetohaveit is a small Filipino business offering stylish and affordable clothing and bags. This full-stack project includes a React frontend for customers to browse products and a Django backend that serves product data dynamically via API endpoints. The site provides a modern, intuitive, and mobile-friendly shopping experience.
 
-Startup Background: Lovetohaveit
-Lovetohaveit was founded by Carol Tolentino, a teacher passionate about fashion, who wanted to make trendy, everyday wear accessible without compromising quality. The brand focuses on practical, comfortable, and stylish clothing and accessories suitable for work, casual outings, and everyday life. Based in San Fernando, Pampanga, Lovetohaveit connects with its customers primarily through social media. https://www.facebook.com/lab2haveit
+🎨 Purpose
 
+Establish a professional online presence beyond social media.
 
-🎨 Purpose of This Website
-Since this is the brand’s first dedicated website, it was developed to:
+Organize products efficiently with clear categories for clothes and bags.
 
-Establish a professional online presence beyond social media platforms.
+Enhance user experience with smooth navigation between Home, Clothes, Bags, and Product Details pages.
 
-Organize products efficiently with clear categories for clothes and bags, each with images, prices, and ratings.
+Enable dynamic product data using a Django REST API.
 
-Enhance user experience by providing smooth navigation between Home, Clothes, Bags, and Product Details pages.
-
-Promote customer engagement via direct links to social media.
-
-Prepare for future scalability with potential features like shopping carts, checkout, and user accounts.
-
+Prepare for future features like shopping carts, checkout, and user accounts.
 
 💻 Technologies Used
-The project uses React as the core library for building dynamic interfaces, along with React Bootstrap for responsive layout and pre-built components like Navbar, Card, and Button. React Router DOM manages page navigation. Custom JavaScript handles logic and interactivity, while CSS and inline styles define the brand’s look and feel.
 
+Frontend:
+
+React, React Router DOM, React Bootstrap
+
+Custom JavaScript and CSS for interactivity and styling
+
+Backend:
+
+Python 3.12, Django 5.2.5
+
+Django REST Framework
+
+JsonResponse for API responses
 
 📂 Project Structure
 
-src/components/Header.jsx: Navigation bar with the brand logo, category links, and Facebook link.
+Frontend (React)
 
-src/components/Footer.jsx: Placeholder footer component.
-
-src/components/Product.jsx: Reusable component to display individual product cards with images, names, prices, and ratings.
-
-src/components/Rating.jsx: Component that displays product ratings and review counts.
-
-src/screens/HomeScreen.jsx: Homepage showcasing the brand story, mission, hero section, and featured products.
-
-src/screens/ClothesScreen.jsx: Page displaying all clothing products.
-
-src/screens/BagsScreen.jsx: Page displaying all bag products.
-
-src/products.js: Central data file containing all products for easy management.
-
-src/App.js: Main file handling routing and layout of the website.
-
-src/index.js: Entry point rendering the React app.
+src/components/
+├─ Header.jsx       # Navigation bar with logo, links, social media
+├─ Footer.jsx       # Footer component
+├─ Product.jsx      # Reusable product card component
+├─ Rating.jsx       # Product rating display
+src/screens/
+├─ HomeScreen.jsx   # Homepage with hero section and featured products
+├─ ClothesScreen.jsx# Page showing all clothing products
+├─ BagsScreen.jsx   # Page showing all bag products
+src/products.js     # Central product data
+src/App.js          # Routes and main layout
+src/index.js        # Entry point
 
 
-🛣️ Project Routes and Screens
+Backend (Django)
 
-/ → HomeScreen: Introduces the brand, mission, and featured products.
+backend/
+├─ backend/         # Django project
+│  ├─ settings.py
+│  ├─ urls.py
+│  └─ wsgi.py
+├─ base/            # Django app
+│  ├─ __init__.py
+│  ├─ urls.py       # API routes
+│  ├─ views.py      # API views for products and routes
+│  ├─ products.py   # Dummy product data
+└─ manage.py
 
-/clothes → ClothesScreen: Displays all clothing items.
+🛣️ Project Routes and API Endpoints
 
-/bags → BagsScreen: Displays all bag products.
+Frontend Routes:
 
+/ → HomeScreen: Brand story, mission, and featured products
 
+/clothes → ClothesScreen: Displays all clothing items
 
+/bags → BagsScreen: Displays all bag products
+
+Backend API Endpoints:
+
+GET / → Returns available routes
+
+GET /products/ → Returns a list of all products
+
+GET /products/<pk>/ → Returns a single product by its _id
+
+The pk parameter is used instead of id to avoid conflicts with Python’s built-in function.
 
 ✅ Key Features
 
-Mobile-friendly, responsive design.
+Frontend:
 
-Categorized product navigation for easy browsing.
+Mobile-friendly, responsive design
 
-Product ratings and reviews displayed using a reusable Rating component.
+Categorized product navigation
 
-Hero section and About/Mission sections to tell the brand story.
+Product ratings and reviews
 
-Direct Facebook link to increase customer engagement.
+Hero and About/Mission sections
 
-Clean, modern styling with React Bootstrap and custom CSS hover effects.
+Direct social media links
 
+Modern styling with React Bootstrap and CSS
+
+Backend:
+
+Serves dynamic product data to frontend
+
+RESTful API endpoints compatible with React
+
+Uses dummy data in products.py for testing
+
+Supports dynamic routing via pk parameter
 
 🚀 Installation and Running Locally
-To run the project locally:
 
-Clone the repository:
+Frontend:
 
-git clone https://github.com/gellann/Quiz-1-Datastalgo.git
+# Clone repository
+git clone <repository-url>
 
+# Navigate to frontend folder
+cd frontend
 
-Navigate to the project folder:
-
-cd Quiz-1-Datastalgo
-
-
-Install dependencies:
-
+# Install dependencies
 npm install
 
-
-Start the development server:
-
+# Start React development server
 npm start
 
 
-Open http://localhost:3000
- in your browser.
+Localhost link for frontend:
+
+http://localhost:3000
+
+
+Backend:
+
+# Navigate to backend folder
+cd backend
+
+# Install dependencies
+pip install django djangorestframework
+
+# Apply migrations
+python manage.py migrate
+
+# Start Django server
+python manage.py runserver
+
+
+Localhost link for backend (API endpoints):
+
+http://127.0.0.1:8000
+
+
+Test API URLs:
+
+All products: http://127.0.0.1:8000/products/
+
+Single product: http://127.0.0.1:8000/products/1/
